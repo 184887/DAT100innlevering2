@@ -5,7 +5,7 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		for(int i = 0; i<tabell.length; i++) {
+		for(int i = 0; i < tabell.length; i++) {
 			System.out.println(tabell[i]);
 		}
 
@@ -13,9 +13,20 @@ public class Tabeller {
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < tabell.length; i++) {
+			
+			sb.append(tabell[i]); 
+			
+			  if (i < tabell.length - 1) {
+		            sb.append(", ");
+		        }
+		}
+		
+		   String tableAsString = "[" +sb.toString() + "]";
+	        
+	        
+	        return tableAsString;
 	}
 
 	// c)
