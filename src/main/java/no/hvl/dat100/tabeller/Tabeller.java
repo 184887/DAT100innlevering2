@@ -1,7 +1,8 @@
 package no.hvl.dat100.tabeller;
 
 public class Tabeller {
-
+	public static void main(String [] args)	{
+	}
 	// a)
 	public static void skrivUt(int[] tabell) {
 
@@ -71,11 +72,11 @@ public class Tabeller {
 	// f)
 	public static int[] reverser(int[] tabell) {
 		
-	for(int i = 0; i < tabell; i++) {
+	for(int i = 0; i < tabell.length; i++) {
 			
 		}
 
-		return tabell[];
+		return tabell;
 	}
 
 	// g)
