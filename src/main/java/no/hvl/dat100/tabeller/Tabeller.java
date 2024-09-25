@@ -5,57 +5,77 @@ public class Tabeller {
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		for(int i = 0; i < tabell.length; i++) {
+		for (int i = 0; i < tabell.length; i++) {
 			System.out.println(tabell[i]);
 		}
 
 	}
 
+// Får en feil men den funker 
 	// b)
 	public static String tilStreng(int[] tabell) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < tabell.length; i++) {
-			
-			sb.append(tabell[i]); 
-			
-			  if (i < tabell.length - 1) {
-		            sb.append(", ");
-		        }
+
+			sb.append(tabell[i]);
+
+			if (i < tabell.length - 1) {
+				sb.append(", ");
+			}
 		}
-		
-		   String tableAsString = "[" +sb.toString() + "]";
-	        
-	        
-	        return tableAsString;
+
+		String tableAsString = "[" + sb.toString() + "]";
+
+		return tableAsString;
 	}
 
 	// c)
 	public static int summer(int[] tabell) {
+		int s = 0;
+		for (int i : tabell) {
+			s += i;
+		}
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden summer ikke implementert");
+		return s;
 	}
 
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
+		boolean s = false;
+		for (int t : tabell) {
+			if (t == tall) {
+				s = true;
+				break;
+			} else {
+				s = false;
+			}
+		}
+		return s;
 
 	}
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+		int s = 0;
+		for (int i = 0; i < tabell.length; i++) {
+			if (i == tall) {
+				s = i;
+				break;
+			} else {
+				s = -1;
+			}
+		}
+		return s; 
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
+		
+	for(int i = 0; i < tabell; i++) {
+			
+		}
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+		return tabell[];
 	}
 
 	// g)
