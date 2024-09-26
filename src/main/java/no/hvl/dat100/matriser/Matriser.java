@@ -3,13 +3,14 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] tab = { { 3, 2, 1, 7 },
-						{ 9, 11, 5, 4 }, 
-						{ 6, 0, 13, 17 }, 
-						{ 7, 21, 14, 15 } };
+		int[][] tab = { { 3, 2, 1, 7 }, 
+				{ 9, 11, 5, 4 }, 
+				{ 6, 0, 13, 17 }, 
+				{ 7, 21, 14, 15 } };
 
-		//skrivUt(tab);
-System.out.print(tilStreng(tab));
+		// skrivUt(tab);
+	
+		skaler(tab);
 	}
 
 	// a)
@@ -34,17 +35,29 @@ System.out.print(tilStreng(tab));
 				sb.append(i + " ");
 			}
 		}
-		String tableAsString =  sb.toString();
+		String tableAsString = sb.toString();
 
 		return tableAsString;
-		
+
 	}
 
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skaler ikke implementert");
+		tall = 2;
+
+		int rads = matrise.length ;
+		int kol = matrise[0].length - 1;
+
+		int[][] tab2 = new int[rads][kol];
+		
+		for (int rad  = 0; rad < rads; rad++) {
+			for (int i = 0; i < kol; i++) {
+				tab2[rad][i] = matrise[rad][i] * tall;
+			}
+		}
+
+		return tab2; 
 
 	}
 
