@@ -7,10 +7,10 @@ public class Matriser {
 				{ 9, 11, 5, 4 }, 
 				{ 6, 0, 13, 17 }, 
 				{ 7, 21, 14, 15 } };
-
-		// skrivUt(tab);
+		int[][] sTab =  skaler(2, tab);
+		 skrivUt(sTab);
 	
-		skaler(tab);
+		
 	}
 
 	// a)
@@ -24,6 +24,7 @@ public class Matriser {
 		System.out.print("]");
 
 	}
+
 
 	// b)
 	public static String tilStreng(int[][] matrise) {
@@ -44,20 +45,15 @@ public class Matriser {
 	// c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 
-		tall = 2;
+		int[][] sTab = new int[matrise.length][matrise[0].length];
 
-		int rads = matrise.length ;
-		int kol = matrise[0].length - 1;
-
-		int[][] tab2 = new int[rads][kol];
-		
-		for (int rad  = 0; rad < rads; rad++) {
-			for (int i = 0; i < kol; i++) {
-				tab2[rad][i] = matrise[rad][i] * tall;
+		for (int i = 0; i < matrise.length; i++) {
+			for (int j = 0; j < matrise[i].length; j++) {
+				sTab[i][j] = matrise[i][j] * tall;
 			}
 		}
 
-		return tab2; 
+		return sTab;
 
 	}
 
