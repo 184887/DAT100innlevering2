@@ -3,12 +3,24 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] tab = { { 3, 2, 1, 7 }, 
+		int[][] abc = { { 3, 2, 1, 7 }, 
 				{ 9, 11, 5, 4 }, 
 				{ 6, 0, 13, 17 }, 
 				{ 7, 21, 14, 15 } };
-		int[][] sTab =  skaler(2, tab);
-		 skrivUt(sTab);
+
+				int[][] ad = { 	{ 1, 0, 0, 0 }, 
+								{ 0, 1, 0, 0 }, 
+								{ 0, 0, 1, 0 }, 
+								{ 0, 0, 0, 1 } 
+								
+							};
+
+				
+
+		int[][] sTab =  speile(ad);
+		 //skrivUt(sTab);
+
+		skrivUt(sTab);
 	
 		
 	}
@@ -17,6 +29,7 @@ public class Matriser {
 	public static void skrivUt(int[][] matrise) {
 		System.out.print("[");
 		for (int[] rad : matrise) {
+			System.out.println();
 			for (int i : rad) {
 				System.out.print(i + ", ");
 			}
@@ -59,22 +72,52 @@ public class Matriser {
 
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
+	boolean lik = true;
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erLik ikke implementert");
 
+		
+		if(a.length != b.length || a[0].length != b[0].length){
+			return false;
+			
+		}
+		
+			for (int i = 0; i < a.length; i++){
+				for(int j = 0; a[i].length < 0; j++){
+					if(a[j][i] == a[j][i]){
+						lik = true;
+					}
+					else if (a[j][i] != a[j][i]) {
+						lik = false; 
+				} 
+				}
+				
+			}
+			return lik;
+		
+		
 	}
 
-	// e)
+	// aV)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
+		int[][] sTab = new int[matrise.length][matrise[0].length];
+		
+		
+		int rad = -1;
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
+		for (int i = 0; i < matrise.length; i++) {
+			rad++;
+			int linje = 0;
+			for (int j = 0; j < matrise[i].length; j++) {
+				sTab[i][j] = matrise[matrise.length -1 - rad][matrise[i].length - 1 -linje];
+				linje ++;
+			}
+		}
+		return sTab;
 
 	}
 
-	// f)
+	// bV )
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
 		// TODO
