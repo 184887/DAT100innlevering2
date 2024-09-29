@@ -4,9 +4,11 @@ public class Tabeller {
 	public static void main(String[] args) {
 		int[] testTabell = { 1, 1, 2, 3, 4 };
 		int[] testTabell2 = { 1, 1, 2, 3, 4, 5};
-		skrivUt(settSammen(testTabell, testTabell2));
-	
-		System.out.println(erSortert(testTabell));
+		int[] tabell = { 6, 4, 1 };
+		int[] rTab = reverser(tabell) ;
+		skrivUt(rTab);
+
+		
 	}
 
 	// a)
@@ -23,11 +25,9 @@ public class Tabeller {
 	public static String tilStreng(int[] tabell) {
 		StringBuilder sb = new StringBuilder();
 		for (int i = 0; i < tabell.length; i++) {
-
 			sb.append(tabell[i]);
-
 			if (i < tabell.length - 1) {
-				sb.append(", ");
+				sb.append(",");
 			}
 		}
 
@@ -63,43 +63,40 @@ public class Tabeller {
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
-		int s = 0;
+		int s = -1;
 		for (int i = 0; i < tabell.length; i++) {
-			if (i == tall) {
+			if (tabell[i] == tall) {
 				s = i;
-				break;
-			} else {
-				s = -1;
-			}
-		}
+			} 
+		} 
 		return s;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
+		int[] reversert = new int[tabell.length];
+		int nyPlass = reversert.length - 1;
 
 		for (int i = 0; i < tabell.length; i++) {
-
+			reversert[nyPlass] = tabell[i];
+			nyPlass--;
 		}
 
-		return tabell;
+		return reversert;
 	}
 
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// Hvis dette tallet er like stort som tabbelen så er den sortert i stigende rekkefølge
-		int talltabell = 0;
 		
-		for (int i = 0; i < tabell.length; i++) {
-			if (i > 0 && tabell[i] > tabell[i - 1]) {
-				talltabell += 1;
-			}
+		boolean s = true;
+		for (int i = 0; i < tabell.length - 1; i++) {
+			if (tabell[i] > tabell[i + 1]){
+				s = false;
+				break;
+			} 
 		}
-		if (talltabell == tabell.length-1) {
-			return true;
-		}
-		return false;
+		return s;
 	}
 
 	// h)

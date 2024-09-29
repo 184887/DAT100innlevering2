@@ -95,7 +95,9 @@ class MatriserEnhetsTests {
 	@Test 
 	void testMultipliser () {
 
-		int[][] ab = { {84,90,96}, {201,216,231}, {318,342,366} };
+		int[][] ab = { 	{84,90,96},
+						{201,216,231}, 
+						{318,342,366} };
 
 		int[][] multiplisert = Matriser.multipliser(a,b);
 		

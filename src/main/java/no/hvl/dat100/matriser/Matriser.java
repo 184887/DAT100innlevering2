@@ -1,12 +1,19 @@
 package no.hvl.dat100.matriser;
 
+import java.lang.classfile.instruction.DiscontinuedInstruction.RetInstruction;
+
+import javax.print.DocFlavor.STRING;
+import javax.swing.text.AbstractDocument.LeafElement;
+
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] abc = { { 0, 1, 1, 0 }, 
-						{ 0, 0, 0, 0 }, 
-						{ 0, 0, 0, 0 }, 
-						{ 0, 1, 1, 0 } };
+		int[][] a = { {3,1,4} };
+
+		int[][] b = { 	{3,1,},
+						{2,5},
+						{6,6} };
+
 
 				int[][] ad = { 	{ 0, 0, 1, 1, 1, 1, 0, 0 }, 
 								{ 0, 1, 0, 0, 0, 0, 1, 0 },
@@ -23,12 +30,9 @@ public class Matriser {
 												{3,6,9} };
 
 				
-
-		int[][] sTab =  speile(speilet);
-		 //skrivUt(sTab);
-
-		skrivUt(sTab);
-	
+	int[][]mTab = multipliser(a, b);
+		
+	skrivUt(mTab);
 		
 	}
 
@@ -51,10 +55,11 @@ public class Matriser {
 
 		StringBuilder sb = new StringBuilder();
 		for (int[] rad : matrise) {
-			sb.append("\n");
+			
 			for (int i : rad) {
 				sb.append(i + " ");
 			}
+			sb.append("\n");
 		}
 		String tableAsString = sb.toString();
 
@@ -80,28 +85,20 @@ public class Matriser {
 	// d)
 	public static boolean erLik(int[][] a, int[][] b) {
 	boolean lik = true;
-
-
 		
 		if(a.length != b.length || a[0].length != b[0].length){
 			return false;
 			
 		}
-
 			for (int i = 0; i < a.length; i++){
-				for(int j = 0; a[i].length < 0; j++){
-					if(a[j][i] == a[j][i]){
-						lik = true;
-					}
-					else if (a[j][i] != a[j][i]) {
-						lik = false; 
-				} 
-				}
-				
-			}
-			return lik;
+				for(int j = 0; j< a[i].length ;j++){
+					if (a[i][j] != b[i][j]) {
+						return false;
+		}
 		
-		
+	}
+}
+	return lik;	
 	}
 
 	// aV)
@@ -128,9 +125,18 @@ public class Matriser {
 
 	// bV )
 	public static int[][] multipliser(int[][] a, int[][] b) {
+		int[][] matriseProdukt = new int[a.length][b[0].length];
+		if (b.length == a[0].length){
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
-
+			for (int i = 0; i < b.length; i++ ){
+				for(int j = 0; j< a[0].length; j++){
+					matriseProdukt[i][j] = a[i][j] * b[i][j];
+			
+			}
+			
+		}
+		
 	}
-}
+	return matriseProdukt;
+	
+}}
