@@ -126,17 +126,22 @@ public class Matriser {
 	// bV )
 	public static int[][] multipliser(int[][] a, int[][] b) {
 		int[][] matriseProdukt = new int[a.length][b[0].length];
-		if (b.length == a[0].length){
 
-			for (int i = 0; i < b.length; i++ ){
-				for(int j = 0; j< a[0].length; j++){
-					matriseProdukt[i][j] = a[i][j] * b[i][j];
+		if (a[0].length != b.length) {
+			throw new IllegalArgumentException("A sinne rader må være lik b sin rekke ");
+		}
+
+			for (int i = 0; i < a.length; i++ ){
+				for(int j = 0; j< b[0].length; j++){
+					for (int k = 0; k < b.length; k++) {  
+						matriseProdukt[i][j] += a[i][k] * b[k][j];  
+					}
 			
 			}
 			
 		}
 		
-	}
+	
 	return matriseProdukt;
 	
 }}
