@@ -1,38 +1,9 @@
 package no.hvl.dat100.matriser;
 
-import java.lang.classfile.instruction.DiscontinuedInstruction.RetInstruction;
-
-import javax.print.DocFlavor.STRING;
-import javax.swing.text.AbstractDocument.LeafElement;
-
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] a = { {3,1,4} };
-
-		int[][] b = { 	{3,1,},
-						{2,5},
-						{6,6} };
-
-
-				int[][] ad = { 	{ 0, 0, 1, 1, 1, 1, 0, 0 }, 
-								{ 0, 1, 0, 0, 0, 0, 1, 0 },
-								{ 0, 1, 0, 0, 0, 0, 1, 0 },
-								{ 0, 0, 1, 1, 1, 1, 0, 0 },
-								{ 0, 1, 0, 0, 0, 0, 1, 0 },
-								{ 0, 1, 0, 0, 0, 0, 1, 0 },
-								{ 0, 1, 0, 0, 0, 0, 1, 0 },
-								{ 0, 0, 1, 1, 1, 1, 0, 0 },
-							};
-
-							int[][] speilet = { {1,4,7},
-												{2,5,8}, 
-												{3,6,9} };
-
-				
-	int[][]mTab = multipliser(a, b);
 		
-	skrivUt(mTab);
 		
 	}
 

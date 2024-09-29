@@ -2,12 +2,7 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 	public static void main(String[] args) {
-		int[] testTabell = { 1, 1, 2, 3, 4 };
-		int[] testTabell2 = { 1, 1, 2, 3, 4, 5};
-		int[] tabell = { 6, 4, 1 };
-		int[] rTab = reverser(tabell) ;
-		skrivUt(rTab);
-
+		
 		
 	}
 
