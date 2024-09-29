@@ -3,21 +3,28 @@ package no.hvl.dat100.matriser;
 public class Matriser {
 
 	public static void main(String[] args) {
-		int[][] abc = { { 3, 2, 1, 7 }, 
-				{ 9, 11, 5, 4 }, 
-				{ 6, 0, 13, 17 }, 
-				{ 7, 21, 14, 15 } };
+		int[][] abc = { { 0, 1, 1, 0 }, 
+						{ 0, 0, 0, 0 }, 
+						{ 0, 0, 0, 0 }, 
+						{ 0, 1, 1, 0 } };
 
-				int[][] ad = { 	{ 1, 0, 0, 0 }, 
-								{ 0, 1, 0, 0 }, 
-								{ 0, 0, 1, 0 }, 
-								{ 0, 0, 0, 1 } 
-								
+				int[][] ad = { 	{ 0, 0, 1, 1, 1, 1, 0, 0 }, 
+								{ 0, 1, 0, 0, 0, 0, 1, 0 },
+								{ 0, 1, 0, 0, 0, 0, 1, 0 },
+								{ 0, 0, 1, 1, 1, 1, 0, 0 },
+								{ 0, 1, 0, 0, 0, 0, 1, 0 },
+								{ 0, 1, 0, 0, 0, 0, 1, 0 },
+								{ 0, 1, 0, 0, 0, 0, 1, 0 },
+								{ 0, 0, 1, 1, 1, 1, 0, 0 },
 							};
+
+							int[][] speilet = { {1,4,7},
+												{2,5,8}, 
+												{3,6,9} };
 
 				
 
-		int[][] sTab =  speile(ad);
+		int[][] sTab =  speile(speilet);
 		 //skrivUt(sTab);
 
 		skrivUt(sTab);
@@ -80,7 +87,7 @@ public class Matriser {
 			return false;
 			
 		}
-		
+
 			for (int i = 0; i < a.length; i++){
 				for(int j = 0; a[i].length < 0; j++){
 					if(a[j][i] == a[j][i]){
@@ -102,15 +109,17 @@ public class Matriser {
 
 		int[][] sTab = new int[matrise.length][matrise[0].length];
 		
+		int linjePos = -1;
 		
-		int rad = -1;
-
 		for (int i = 0; i < matrise.length; i++) {
-			rad++;
-			int linje = 0;
+			int nyRad = 0; 
+			linjePos++;;
+			
 			for (int j = 0; j < matrise[i].length; j++) {
-				sTab[i][j] = matrise[matrise.length -1 - rad][matrise[i].length - 1 -linje];
-				linje ++;
+				sTab[i][j] = matrise[nyRad][linjePos];
+				nyRad++;
+				
+				
 			}
 		}
 		return sTab;
