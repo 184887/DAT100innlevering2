@@ -31,6 +31,7 @@ public class Matriser {
 				sb.append(i + " ");
 			}
 			sb.append("\n");
+			
 		}
 		String tableAsString = sb.toString();
 
@@ -81,7 +82,7 @@ public class Matriser {
 		
 		for (int i = 0; i < matrise.length; i++) {
 			int nyRad = 0; 
-			linjePos++;;
+			linjePos++;
 			
 			for (int j = 0; j < matrise[i].length; j++) {
 				sTab[i][j] = matrise[nyRad][linjePos];
@@ -99,7 +100,7 @@ public class Matriser {
 		int[][] matriseProdukt = new int[a.length][b[0].length];
 
 		if (a[0].length != b.length) {
-			throw new IllegalArgumentException("A sinne rader må være lik b sin rekke ");
+			throw new IllegalArgumentException("a rekke må være lik b rad ");
 		}
 
 			for (int i = 0; i < a.length; i++ ){
